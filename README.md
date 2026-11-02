@@ -66,6 +66,9 @@ Para habilitar a publicação no repositório, em **Settings → Pages**, seleci
 
 https://cargnieli2016.github.io/bi-madeiras/
 
+Para hospedar futuramente no Cloudflare Pages, use `dist/client` como diretório
+de saída e configure a variável de build `VITE_BASE_PATH` com o valor `/`.
+
 ## Estrutura do projeto
 
 ```text
