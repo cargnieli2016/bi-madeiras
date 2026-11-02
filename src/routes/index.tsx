@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import m01 from "@/assets/m01.webp.asset.json";
-import m02 from "@/assets/m02.webp.asset.json";
-import m03 from "@/assets/m03.webp.asset.json";
-import m04 from "@/assets/m04.webp.asset.json";
-import m05 from "@/assets/m05.webp.asset.json";
-import m06 from "@/assets/m06.webp.asset.json";
-import m07 from "@/assets/m07.webp.asset.json";
-import m08 from "@/assets/m08.webp.asset.json";
+import m01 from "@/assets/01.webp";
+import m02 from "@/assets/02.webp";
+import m04 from "@/assets/04.webp";
+import m05 from "@/assets/05.webp";
+import m06 from "@/assets/06.webp";
+import m07 from "@/assets/07.webp";
+import m08 from "@/assets/08.webp";
+import logo from "@/assets/logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -27,12 +27,12 @@ const TEL = "tel:+5519993048787";
 const ADDRESS = "Rod. Jorn. Francisco Aguirre Proença, S/N - KM 101 - São Clemente, Monte Mor - SP, 13190-000";
 
 const products = [
-  { n: "01", t: "Tábuas e caibros", d: "Pinus e eucalipto em várias bitolas, brutos ou aparelhados.", img: m01.url },
-  { n: "02", t: "Pontaletes", d: "Escoramento firme para laje, forma e obra pesada.", img: m07.url },
-  { n: "03", t: "Madeirite", d: "Chapas resinadas e plastificadas para forma de concreto.", img: m06.url },
-  { n: "04", t: "Telhas", d: "Telhas cerâmicas e acessórios para o seu telhado.", img: m02.url },
-  { n: "05", t: "Ripas e sarrafos", d: "Peças leves para estrutura de telhado e acabamento.", img: m08.url },
-  { n: "06", t: "Churrasqueiras", d: "Modelos pré-moldados em tijolinho, prontos para montar.", img: m04.url },
+  { t: "Tábuas e caibros", d: "Pinus e eucalipto em várias bitolas, brutos ou aparelhados.", img: m01 },
+  { t: "Pontaletes", d: "Escoramento firme para laje, forma e obra pesada.", img: m07 },
+  { t: "Madeirite", d: "Chapas resinadas e plastificadas para forma de concreto.", img: m06 },
+  { t: "Telhas", d: "Telhas cerâmicas e acessórios para o seu telhado.", img: m02 },
+  { t: "Ripas e sarrafos", d: "Peças leves para estrutura de telhado e acabamento.", img: m08 },
+  { t: "Churrasqueiras", d: "Modelos pré-moldados em tijolinho, prontos para montar.", img: m04 },
 ];
 
 function Index() {
@@ -41,9 +41,8 @@ function Index() {
       {/* Top bar */}
       <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-          <a href="#" className="flex items-baseline gap-1 font-display text-2xl tracking-tight">
-            <span className="text-primary">BI</span>
-            <span>MADEIRAS</span>
+          <a href="#" aria-label="BI Madeiras — página inicial" className="shrink-0">
+            <img src={logo} alt="BI Madeiras" className="h-[68px] w-[180px] object-cover object-top" />
           </a>
           <nav className="hidden gap-8 text-sm font-medium md:flex">
             <a href="#produtos" className="hover:text-primary">Produtos</a>
@@ -73,9 +72,9 @@ function Index() {
           </div>
         </div>
         <div className="grid grid-cols-2 gap-3">
-          <img src={m05.url} alt="Pilhas de tábuas no pátio" className="row-span-2 h-full w-full rounded-sm object-cover" />
-          <img src={m01.url} alt="Tábuas de pinus empilhadas" className="aspect-square w-full rounded-sm object-cover" />
-          <img src={m07.url} alt="Pontaletes e tábuas" className="aspect-square w-full rounded-sm object-cover" />
+          <img src={m05} alt="Pilhas de tábuas no pátio" className="row-span-2 h-full w-full rounded-sm object-cover" />
+          <img src={m01} alt="Tábuas de pinus empilhadas" className="aspect-square w-full rounded-sm object-cover" />
+          <img src={m07} alt="Pontaletes e tábuas" className="aspect-square w-full rounded-sm object-cover" />
         </div>
       </section>
 
@@ -94,12 +93,11 @@ function Index() {
         </div>
         <div className="grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
           {products.map((p) => (
-            <article key={p.n} className="group bg-card">
+            <article key={p.t} className="group bg-card">
               <div className="overflow-hidden">
                 <img src={p.img} alt={p.t} loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105" />
               </div>
               <div className="p-6">
-                <span className="font-display text-sm text-primary">{p.n}</span>
                 <h3 className="mt-1 font-display text-xl">{p.t}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{p.d}</p>
               </div>
@@ -111,7 +109,7 @@ function Index() {
       {/* About */}
       <section id="sobre" className="bg-secondary">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-2">
-          <img src={m03.url} alt="Placas: telhas, tábuas, madeirite, pontalete" loading="lazy" className="w-full rounded-sm object-cover" />
+          <img src={m08} alt="Tábuas de madeira organizadas no estoque" loading="lazy" className="aspect-[4/3] w-full rounded-sm object-cover md:aspect-[5/4]" />
           <div>
             <h2 className="font-display text-4xl">Do pátio pra sua obra, sem enrolação.</h2>
             <p className="mt-5 text-muted-foreground">
@@ -131,7 +129,7 @@ function Index() {
 
       {/* CTA */}
       <section className="relative overflow-hidden">
-        <img src={m06.url} alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={m06} alt="" className="absolute inset-0 h-full w-full object-cover" />
         <div className="grain-overlay relative">
           <div className="mx-auto max-w-4xl px-5 py-24 text-center text-ink-foreground">
             <h2 className="font-display text-4xl md:text-6xl">Precisa de madeira hoje?</h2>
@@ -157,13 +155,10 @@ function Index() {
               <dd className="mt-1"><a href={TEL} className="font-display text-2xl hover:text-primary">(19) 99304-8787</a></dd>
             </div>
           </dl>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=-22.922753,-47.2515882" target="_blank" rel="noreferrer" className="mt-8 inline-block rounded-sm border-2 border-foreground px-6 py-3 font-semibold hover:bg-foreground hover:text-background">
-            Traçar rota
-          </a>
         </div>
         <iframe
           title="Mapa BI Madeiras"
-          src="https://www.google.com/maps?q=-22.922753,-47.2515882&z=16&output=embed"
+          src="https://maps.google.com/maps?cid=11843425203071766271&z=17&output=embed"
           className="h-96 w-full rounded-sm border border-border"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"

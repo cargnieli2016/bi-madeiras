@@ -1,33 +1,78 @@
 # BI Madeiras
 
-Faça pra mim um site de madeireira, mandei o print para se basear, mas não faça igual senão vai ser plágio. Junto enviei as imagens da madeireira junto com o logo.
+Site institucional da **BI Madeiras**, madeireira localizada em Monte Mor, no
+interior de São Paulo. O site apresenta os produtos e facilita o contato para
+orçamentos e a localização da loja.
 
-Aqui estão os dados da madeireira:
-Rod. Jorn. Francisco Aguirre Proença, S/N - KM 101 - são clemente, Monte Mor - SP, 13190-000
+## O site
 
-19 9 9304-8787
+O site foi desenvolvido para apresentar a madeireira de forma clara e funcionar
+em computadores e dispositivos móveis. Entre os recursos disponíveis estão:
 
+- Apresentação dos produtos: tábuas e caibros, pontaletes, madeirite, telhas,
+  ripas e sarrafos e churrasqueiras.
+- Atalhos para solicitar orçamento pelo WhatsApp.
+- Informações de endereço e mapa incorporado com acesso ao Google Maps.
+- Fotografias e logotipo da própria madeireira.
 
-Faça também um mapa:
-https://www.google.com/maps/place/BI+MADEIRAS/@-22.922788,-47.2514974,17z/data=!4m6!3m5!1s0x94c8bbb9e9582a6d:0xa45c4c7919004eff!8m2!3d-22.922753!4d-47.2515882!16s%2Fg%2F11h0bp__26?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D
+## Tecnologias
 
-This project was built with [Lovable](https://lovable.dev).
+- React e TypeScript
+- TanStack Start e TanStack Router
+- Vite
+- Tailwind CSS
 
-## Build with Lovable
+## Requisitos
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/454babbb-6228-4db0-8eff-a54682ced597).
+- Node.js 20.19 ou superior (ou 22.12 ou superior)
+- npm
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+## Executar localmente
 
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+```bash
+npm install
 npm run dev
+```
+
+O Vite informa no terminal o endereço local do site quando o servidor estiver
+pronto.
+
+## Comandos disponíveis
+
+| Comando | Descrição |
+| --- | --- |
+| `npm run dev` | Inicia o servidor de desenvolvimento |
+| `npm run build` | Gera a build de produção |
+| `npm run preview` | Abre uma prévia local da build |
+| `npm test` | Executa os testes |
+| `npm run lint` | Analisa o código com ESLint |
+| `npm run format` | Formata os arquivos com Prettier |
+
+Para gerar e visualizar a build de produção:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Publicação
+
+O deploy é feito automaticamente no GitHub Pages quando há um push para a
+branch `main`. O workflow gera o site estático e publica o conteúdo de
+`dist/client`.
+
+Para habilitar a publicação no repositório, em **Settings → Pages**, selecione
+**GitHub Actions** como origem. O endereço do projeto será:
+
+https://cargnieli2016.github.io/bi-madeiras/
+
+## Estrutura do projeto
+
+```text
+src/
+├── assets/           # Fotos e logotipo
+├── components/ui/    # Componentes de interface
+├── lib/              # Utilitários e tratamento de erros
+├── routes/           # Rotas e páginas
+└── styles.css        # Estilos globais
 ```
