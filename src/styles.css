@@ -45,6 +45,10 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --font-display: "Archivo Black", sans-serif;
+  --font-sans: "Hind", sans-serif;
   --color-ring-offset-background: var(--background);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
@@ -141,4 +145,8 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
+}
+
+@utility grain-overlay {
+  background-image: linear-gradient(180deg, color-mix(in oklab, var(--ink) 30%, transparent), color-mix(in oklab, var(--ink) 92%, transparent));
 }
